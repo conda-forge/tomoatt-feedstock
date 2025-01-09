@@ -22,6 +22,7 @@ requirements:
     - make
     - openmpi
   host:
+    - openmpi
     - hdf5 =*=mpi_openmpi*
     - yaml-cpp
     - pytomoatt
