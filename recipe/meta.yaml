@@ -12,7 +12,7 @@ source:
 
 build:
   number: 1
-  skip: true  # [win or (osx and x86_64)]
+  skip: true  # [win]
 
 requirements:
   build:
@@ -20,8 +20,8 @@ requirements:
     - {{ stdlib("c") }}
     - cmake
     - make
-  host:
     - openmpi
+  host:
     - hdf5 =*=mpi_openmpi*
     - yaml-cpp
     - pytomoatt
