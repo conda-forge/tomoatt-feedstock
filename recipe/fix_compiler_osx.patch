@@ -1,18 +1,18 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 068ec32..309567b 100644
+index 068ec32..93d1d64 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -15,11 +15,11 @@ else()
- endif()
- 
- # check compiler type
--if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang" AND "${CMAKE_HOST_SYSTEM_PROCESSOR}" MATCHES "arm64")
-+if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "AppleClang")
-   if (CMAKE_BUILD_TYPE STREQUAL "Debug")
-     set(CXX_ADDITIONAL_FLAGS "-Wall -pedantic -g -O0")
+@@ -21,6 +21,13 @@ if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang" AND "${CMAKE_HOST_SYSTEM_PROCESSO
    else()
--    set(CXX_ADDITIONAL_FLAGS "-Wall -pedantic -O3 -funroll-loops -ffast-math -mcpu=native -ftree-vectorize")
-+    set(CXX_ADDITIONAL_FLAGS "-Wall -pedantic -O3 -funroll-loops -ffast-math -march=native -ftree-vectorize")
+     set(CXX_ADDITIONAL_FLAGS "-Wall -pedantic -O3 -funroll-loops -ffast-math -mcpu=native -ftree-vectorize")
    endif()
++elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "AppleClang")
++  MESSAGE("Compiler type: AppleClang")
++  if (CMAKE_BUILD_TYPE STREQUAL "Debug")
++    set(CXX_ADDITIONAL_FLAGS "-Wall -pedantic -g -O0")
++  else()
++    set(CXX_ADDITIONAL_FLAGS "-Wall -pedantic -O3 -funroll-loops -ffast-math -mcpu=apple-latest -ftree-vectorize")
++  endif()
  elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
    MESSAGE("Compiler type: GNU")
+   if (CMAKE_BUILD_TYPE STREQUAL "Debug")
