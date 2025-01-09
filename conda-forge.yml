@@ -7,3 +7,6 @@ github:
 conda_build:
   error_overlinking: true
 conda_forge_output_validation: true
+provider:
+  linux_64: default
+  osx_arm64: default
