@@ -1,13 +1,20 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 068ec32..93d1d64 100644
+index 068ec32..329647c 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -21,6 +21,13 @@ if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang" AND "${CMAKE_HOST_SYSTEM_PROCESSO
+@@ -15,12 +15,20 @@ else()
+ endif()
+ 
+ # check compiler type
++message("${CMAKE_HOST_SYSTEM_PROCESSOR}")
+ if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang" AND "${CMAKE_HOST_SYSTEM_PROCESSOR}" MATCHES "arm64")
+   if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+     set(CXX_ADDITIONAL_FLAGS "-Wall -pedantic -g -O0")
    else()
      set(CXX_ADDITIONAL_FLAGS "-Wall -pedantic -O3 -funroll-loops -ffast-math -mcpu=native -ftree-vectorize")
    endif()
-+elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "AppleClang")
-+  MESSAGE("Compiler type: AppleClang")
++elseif ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang" AND "${CMAKE_HOST_SYSTEM_PROCESSOR}" MATCHES "darwin")
++  MESSAGE("Compiler type: Apple")
 +  if (CMAKE_BUILD_TYPE STREQUAL "Debug")
 +    set(CXX_ADDITIONAL_FLAGS "-Wall -pedantic -g -O0")
 +  else()
