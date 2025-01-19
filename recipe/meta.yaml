@@ -7,8 +7,6 @@ package:
 source:
   url: https://github.com/TomoATT/TomoATT/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 65c6f28af9231e831eef18b9de28284fe882cf24e56b2a671ebc5d2e9fdc5feb
-  patches:
-    - fix_compiler_osx.patch
 
 build:
   number: 0
