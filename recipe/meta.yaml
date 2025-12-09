@@ -19,6 +19,7 @@ requirements:
     - cmake
     - make
     - pkg-config
+    - openmpi >=4.1,<5.0
   host:
     - openmpi >=4.1,<5.0
     - hdf5 =*=mpi_openmpi*
