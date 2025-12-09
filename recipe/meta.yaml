@@ -18,7 +18,7 @@ requirements:
     - {{ stdlib("c") }}
     - cmake
     - make
-    - openmpi
+    - pkg-config
   host:
     - openmpi
     - hdf5 =*=mpi_openmpi*
@@ -26,6 +26,8 @@ requirements:
     - pytomoatt
 
 test:
+  source_files:
+    - test
   commands:
     - cd test && sh run_this_example.sh
 
