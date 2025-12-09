@@ -9,6 +9,7 @@ export CPPFLAGS="${CPPFLAGS} -I${PREFIX}/include"
 
 # Set MPI compiler variables for CMake
 if [ "$(uname)" == "Linux" ]; then
+    echo `which mpicxx`
     export OMPI_CXX="${CXX}"
     export OMPI_CC="${CC}"
     
