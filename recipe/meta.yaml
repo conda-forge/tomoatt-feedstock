@@ -21,8 +21,9 @@ requirements:
     - make
     - pkg-config
     - openmpi
+    - {{ mpi }}  
   host:
-    - openmpi
+    - {{ mpi }}
     - hdf5 =*=mpi_openmpi*
     - yaml-cpp
     - pytomoatt
