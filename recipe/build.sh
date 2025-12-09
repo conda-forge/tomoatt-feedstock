@@ -11,8 +11,8 @@ export CPPFLAGS="${CPPFLAGS} -I${PREFIX}/include"
 if [ "$(uname)" == "Linux" ]; then
     export OMPI_CXX="${CXX}"
     export OMPI_CC="${CC}"
-    export CXX=mpicxx
-    export CC=mpicc
+    export CXX="$PREFIX/bin/mpicxx"
+    export CC="$PREFIX/bin/mpicc"
 fi
 
 cmake ${CMAKE_ARGS} -D CMAKE_INSTALL_PREFIX=$PREFIX ..
