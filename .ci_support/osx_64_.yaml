@@ -16,7 +16,5 @@ cxx_compiler_version:
 - '19'
 macos_machine:
 - x86_64-apple-darwin13.4.0
-openmpi:
-- '5'
 target_platform:
 - osx-64
