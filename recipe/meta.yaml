@@ -19,9 +19,11 @@ requirements:
     - cmake
     - make
     - pkg-config
-    - openmpi >=4.1,<5.0
+    - openmpi >=4.1,<5.0  # [not osx_arm64]
+    - openmpi >=5.0       # [osx_arm64]
   host:
-    - openmpi >=4.1,<5.0
+    - openmpi >=4.1,<5.0  # [not osx_arm64]
+    - openmpi >=5.0       # [osx_arm64]
     - hdf5 =*=mpi_openmpi*
     - yaml-cpp
 
