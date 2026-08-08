@@ -1,4 +1,4 @@
-{% set version = "1.3.0" %}
+{% set version = "1.3.1" %}
 
 package:
   name: tomoatt
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/TomoATT/TomoATT/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 60589a45cb6646fc3f9dbe92aabb69071bedbdde51bd53c96125ac94171529e8
+  sha256: 9c5df7e981db17b9b7f274cd390e1ea6a93a4e6863af50d787dcb73dc517201d
 
 build:
   number: 0
